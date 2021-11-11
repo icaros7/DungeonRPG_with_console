@@ -247,6 +247,14 @@ int main() {
             system("pause");
             break;
         }
+        if (list[0]->checkCollision(list[3])) {
+            system("cls");
+            cout << "-----------------" << endl;
+            cout << "죽었습니다!" << endl;
+            cout << "-----------------" << endl;
+            system("pause");
+            break;
+        }
 
         isFail = false;
     } while (!isFail);
