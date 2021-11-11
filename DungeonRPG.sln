@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DungeonRPG", "DungeonRPG.vcxproj", "{94D729EE-42FD-4806-BA12-42925285FF90}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94D729EE-42FD-4806-BA12-42925285FF90}.Debug|x64.ActiveCfg = Debug|x64
+		{94D729EE-42FD-4806-BA12-42925285FF90}.Debug|x64.Build.0 = Debug|x64
+		{94D729EE-42FD-4806-BA12-42925285FF90}.Debug|x86.ActiveCfg = Debug|Win32
+		{94D729EE-42FD-4806-BA12-42925285FF90}.Debug|x86.Build.0 = Debug|Win32
+		{94D729EE-42FD-4806-BA12-42925285FF90}.Release|x64.ActiveCfg = Release|x64
+		{94D729EE-42FD-4806-BA12-42925285FF90}.Release|x64.Build.0 = Release|x64
+		{94D729EE-42FD-4806-BA12-42925285FF90}.Release|x86.ActiveCfg = Release|Win32
+		{94D729EE-42FD-4806-BA12-42925285FF90}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {27E3F59F-4D46-43AF-913F-6D120CA27FDE}
+	EndGlobalSection
+EndGlobal
