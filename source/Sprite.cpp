@@ -3,7 +3,7 @@
  * 작성: 1팀 강지수, 이호민, 정수빈
  * 파일: Sprite.cpp
  */
-#include "Sprite.h"
+#include "../include/Sprite.h"
 
 /// <summary>
 /// 스프라이트 끼리의 충돌 유무 검사 메서드

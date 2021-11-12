@@ -139,21 +139,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Board.cpp" />
-    <ClCompile Include="Enemy.cpp" />
-    <ClCompile Include="GameBox.cpp" />
-    <ClCompile Include="Hero.cpp" />
+    <ClCompile Include="source/Board.cpp" />
+    <ClCompile Include="source/Enemy.cpp" />
+    <ClCompile Include="source/GameBox.cpp" />
+    <ClCompile Include="source/Hero.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="source/Sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Board.h" />
-    <ClInclude Include="Enemy.h" />
-    <ClInclude Include="GameBox.h" />
-    <ClInclude Include="Hero.h" />
-    <ClInclude Include="Sprite.h" />
-    <ClInclude Include="Trap.h" />
-    <ClInclude Include="Treasure.h" />
+    <ClInclude Include="include/Board.h" />
+    <ClInclude Include="include/Enemy.h" />
+    <ClInclude Include="include/GameBox.h" />
+    <ClInclude Include="include/Hero.h" />
+    <ClInclude Include="include/Sprite.h" />
+    <ClInclude Include="include/Trap.h" />
+    <ClInclude Include="include/Treasure.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="TODO.md" />

@@ -3,7 +3,7 @@
  * 작성: 1팀 강지수, 이호민, 정수빈
  * 파일: Board.cpp
  */
-#include "Board.h"
+#include "../include/Board.h"
 
 /// <summary>
 /// 보드 객체 생성자

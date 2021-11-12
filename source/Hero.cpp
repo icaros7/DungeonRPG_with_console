@@ -3,7 +3,7 @@
  * 작성: 1팀 강지수, 이호민, 정수빈
  * 파일: Hero.cpp
  */
-#include "Hero.h"
+#include "../include/Hero.h"
 
 /// <summary>
 /// 영웅 객체 정적 이동 메서드

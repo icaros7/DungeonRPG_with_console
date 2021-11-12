@@ -9,12 +9,12 @@
 #include <random>
 #include <conio.h>
 
-#include "Sprite.h"
-#include "Hero.h"
-#include "Enemy.h"
-#include "Treasure.h"
-#include "Trap.h"
-#include "Board.h"
+#include "include/Sprite.h"
+#include "include/Hero.h"
+#include "include/Enemy.h"
+#include "include/Treasure.h"
+#include "include/Trap.h"
+#include "include/Board.h"
 
 using namespace std;
 
