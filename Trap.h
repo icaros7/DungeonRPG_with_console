@@ -1,0 +1,16 @@
+/*
+ * 던전 게임
+ * 작성: 1팀 강지수, 이호민, 정수빈
+ * 파일: Trap.h
+ */
+#pragma once
+#include "Sprite.h"
+
+class Trap : public Sprite {
+public:
+    // 보물 객체 생성자
+    Trap(int x, int y) : Sprite(x, y, 'T') { }
+
+    // 보물 객체 이동 메서드
+    void move(char d) {}
+};

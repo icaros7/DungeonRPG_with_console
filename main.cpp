@@ -1,16 +1,7 @@
 /*
  * 던전 게임
  * 작성: 1팀 강지수, 이호민, 정수빈
- * 
- * 해야할 일
- * - 맵 외부 탈출 제한
- * - 맵 크기 확인 조건문 확인
- * - H move()시 E 위치도 H쪽으로 1칸 이동 구현
- * - isFail bool값 활용
- * 
- * 제안 사항
- * - 맵 스테이지 생성
- * - H의 char 값을 다른 것으로 바꿔보기
+ * 파일: main.cpp
  */
 #include <iostream>
 #include <vector>
@@ -18,147 +9,14 @@
 #include <random>
 #include <conio.h>
 
+#include "Sprite.h"
+#include "Hero.h"
+#include "Enemy.h"
+#include "Treasure.h"
+#include "Trap.h"
+#include "Board.h"
+
 using namespace std;
-
-class Sprite {
-protected:
-    int x, y;       // 현재 위치
-    char shape;     // 나타낼 문자
-
-public:
-    /// 생성자
-    Sprite(int x, int y, char shape) : x(x), y(y), shape(shape) {}
-
-    /// 소멸자
-    virtual ~Sprite() {}
-
-    /// Virtual 형태의 move 메서드
-    /// \param d
-    virtual void move(char d) = 0;
-
-    // getter
-    char getShape() { return shape; }
-    int getX() { return x; }
-    int getY() { return y; }
-
-    /// 스프라이트 끼리의 충돌 유무 검사 메서드
-    /// \param other Sprite 타입 피검사자
-    /// \return 충돌 유무 bool 타입 반환
-    bool checkCollision(Sprite* other) {
-        if (x == other->getX() && y == other->getY()) { return true; }
-        else { return false; }
-    }
-    bool checkCollision(Sprite* other1, Sprite* other2, Sprite* other3) {
-        if (checkCollision(other1) || checkCollision(other2) || checkCollision(other3)) return true;
-
-        return false;
-    }
-};
-
-class Hero : public Sprite {
-public:
-    /// 영웅 객체 생성자
-    /// \param x 영웅 객체 x 위치
-    /// \param y 영웅 객체 y 위치
-    Hero(int x, int y) : Sprite(x, y, 'H') {}
-
-    /// 영웅 객체 출력 메서드
-    void draw() { cout << getShape(); }
-
-    /// 영웅 객체 정적 이동 메서드
-    /// \param d 사용자 키 입력
-    void move(char d) {
-        switch (d) {
-        case 'a':
-            x -= 1;
-            break;
-        case 'w':
-            y -= 1;
-            break;
-        case 's':
-            y += 1;
-            break;
-        case 'd':
-            x += 1;
-            break;
-        }
-    }
-};
-
-class Treasure : public Sprite {
-public:
-    /// 보물 객체 생성자
-    /// \param x 보물 객체 x 위치
-    /// \param y 보물 객체 y 위치
-    Treasure(int x, int y) : Sprite(x, y, 'T') { }
-
-    /// 보물 객체 동적 이동 메서드
-    /// \param d 사용자 키 입력
-    void move(char d) {}
-};
-
-class Enemy : public Sprite {
-public:
-    /// 괴물 객체 생성자
-    /// \param x 괴물 객체 x 위치
-    /// \param y 괴물 객체 y 위치
-    Enemy(int x, int y) : Sprite(x, y, 'E') { }
-
-    /// 괴물 객체 동적 이동 메서드
-    /// \param d 사용자 키 입력
-    void move(char d) {
-    } // TODO: 랜덤 이벤트 발생
-};
-
-class Trap : public Sprite {
-public:
-    /// 함정 객체 생성자
-    /// \param x 보물 객체 x 위치
-    /// \param y 보물 객체 y 위치
-    Trap(int x, int y) : Sprite(x, y, 'T') { }
-
-    /// 보물 객체 동적 이동 메서드
-    /// \param d 사용자 키 입력
-    void move(char d) {}
-};
-
-class Board {
-    char* board;        // 게임 보드를 나타낼 포인터
-    int width, height;  // 게임 보드의 넓이, 높이
-
-public:
-    /// 게임 보드 생성자
-    /// \param w 게임 보드의 int 형 넓이
-    /// \param h 게임 보드의 int 형 높이
-    Board(int w, int h) : width(w), height(h) {
-        board = new char[width * height];   // 새 보드 생성
-        clearBoard();                       // 보드 초기화
-    }
-
-    ~Board() { delete board; } // 동적 메모리 할당 해제 소멸자
-
-    ///
-    /// \param r
-    /// \param c
-    /// \param shape
-    void setValue(int r, int c, char shape) { board[r * width + c] = shape; }
-
-    /// 보드 출력 메서드
-    void printBoard() {
-        for (int i = 0; i < height; i++) {
-            cout << "\t";
-            for (int j = 0; j < width; j++) { cout << board[i * width + j]; }
-            cout << endl;
-        }
-    }
-
-    /// 보드 초기화 메서드
-    void clearBoard() {
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; j++) { board[i * width + j] = '.'; }
-        }
-    }
-};
 
 int smallNum(int x, int y) {
     if (x >= y) return y;
