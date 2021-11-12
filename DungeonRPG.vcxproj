@@ -156,7 +156,7 @@
     <ClInclude Include="include/Treasure.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="TODO.md" />
+    <None Include="Readme.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

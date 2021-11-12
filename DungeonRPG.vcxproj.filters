@@ -18,46 +18,46 @@
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Sprite.cpp">
+    <ClCompile Include="source/Board.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Hero.cpp">
+    <ClCompile Include="source/Enemy.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy.cpp">
+    <ClCompile Include="source/GameBox.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Board.cpp">
+    <ClCompile Include="source/Hero.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="GameBox.cpp">
+    <ClCompile Include="source/Sprite.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Sprite.h">
+    <ClInclude Include="include/Board.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Hero.h">
+    <ClInclude Include="include/Enemy.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Treasure.h">
+    <ClInclude Include="include/GameBox.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy.h">
+    <ClInclude Include="include/Hero.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Trap.h">
+    <ClInclude Include="include/Sprite.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Board.h">
+    <ClInclude Include="include/Trap.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="GameBox.h">
+    <ClInclude Include="include/Treasure.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="TODO.md" />
+    <None Include="Readme.md" />
   </ItemGroup>
 </Project>
