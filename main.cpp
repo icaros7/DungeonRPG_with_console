@@ -173,6 +173,16 @@ int getCommand() {
     return -1;
 }
 
+void printResult(int resultCode) {
+    string result = resultCode == 0 ? "성공하셨습니다!" : "실패하셨습니다...";
+
+    system("cls");
+    cout << "-----------------" << endl;
+    cout << result << endl;
+    cout << "-----------------" << endl;
+    system("pause");
+}
+
 int main() {
     vector<Sprite*> list;  // 전체 스프라이트 리스트 저장용 포인터 저장 벡터
     int width, height;      // 게임 보드 초기화 용 입력 버퍼 변수
@@ -231,28 +241,15 @@ int main() {
 
         // TODO: isFail 유무를 통하여 단순 break; 가 아닌 다음 스테이 진행시 활용하기
         if (list[0]->checkCollision(list[1])) {
-            system("cls");
-            cout << "-----------------" << endl;
-            cout << "성공하였습니다!" << endl;
-            cout << "-----------------" << endl;
-            system("pause");
+            printResult(0);
             break;
         }
-
         if (list[0]->checkCollision(list[2])) {
-            system("cls");
-            cout << "-----------------" << endl;
-            cout << "죽었습니다!" << endl;
-            cout << "-----------------" << endl;
-            system("pause");
+            printResult(1);
             break;
         }
         if (list[0]->checkCollision(list[3])) {
-            system("cls");
-            cout << "-----------------" << endl;
-            cout << "죽었습니다!" << endl;
-            cout << "-----------------" << endl;
-            system("pause");
+            printResult(1);
             break;
         }
 
