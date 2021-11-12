@@ -184,26 +184,20 @@ void printResult(int resultCode) {
 }
 
 int main() {
-    vector<Sprite*> list;  // 전체 스프라이트 리스트 저장용 포인터 저장 벡터
-    int width, height;      // 게임 보드 초기화 용 입력 버퍼 변수
+    vector<Sprite*> list;   // 전체 스프라이트 리스트 저장용 포인터 저장 벡터
+    int value;              // 게임 보드 초기화 용 입력 버퍼 변수
     random_device rd;       // 난수 생성을 위한 random_device 객체
     mt19937 gen(rd());      // 32비트 난수 생성 엔진 초기화
 
     do {
-        cout << "보드 크기를 입력 하시오 (최대 값 30)" << endl;
+        cout << "보드 크기를 입력 하시오 (최소 9, 최대 21): ";
+        cin >> value;
+    } while (value > 21 || value < 9);
 
-        cout << "가로: ";
-        cin >> width;
-        cout << "세로: ";
-        cin >> height;
+    uniform_int_distribution<int> distr(0, value - 1);              // 난수 생성 분포 설정
 
-        cout << endl;
-    } while ((width < 0 || width > 31) && (height < 0 || height > 31));
-
-    uniform_int_distribution<int> distr(0, smallNum(width - 1, height - 1)); // 난수 생성 분포 설정
-
-    Board board(height, width);                                     // 새로운 게임 보드 생성
-    do { // TODO: while 조건문 수정
+    Board board(value);                                             // 새로운 게임 보드 생성
+    do {
         for (auto& e : list) { delete e; }
         list.clear();
         list.push_back(new Hero(distr(gen), distr(gen)));           // 영웅 객체 랜덤 위치 생성
