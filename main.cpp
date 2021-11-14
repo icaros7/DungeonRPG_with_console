@@ -68,7 +68,7 @@ int main() {
     do {
         for (auto& e : list) { delete e; }
         list.clear();
-        list.push_back(new Hero(distr(gen), distr(gen)));           // 영웅 객체 랜덤 위치 생성
+        list.push_back(new Hero(distr(gen), distr(gen), value));    // 영웅 객체 랜덤 위치 생성
         list.push_back(new Treasure(distr(gen), distr(gen)));       // 보물 객체 랜덤 위치 생성
         list.push_back(new Enemy(distr(gen), distr(gen)));          // 괴물 객체 랜덤 위치 생성
         list.push_back(new Trap(distr(gen), distr(gen)));           // 함정 객체 랜덤 위치 생성
