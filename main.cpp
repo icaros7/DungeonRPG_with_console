@@ -18,11 +18,21 @@
 
 using namespace std;
 
+/// <summary>
+/// 둘 중 더 작은 수 반환 메서드
+/// </summary>
+/// <param name="x">int 형 값1</param>
+/// <param name="y">int 형 값1</param>
+/// <returns>int 형 더 작은 값</returns>
 int smallNum(int x, int y) {
     if (x >= y) return y;
     else return x;
 }
 
+/// <summary>
+/// 실시간 키 입력을 위한 conio.h/_kbhit 메서드 사용
+/// </summary>
+/// <returns>입력 키</returns>
 int getCommand() {
     if (_kbhit()) {
         return _getch();
