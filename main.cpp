@@ -55,7 +55,7 @@ void deleteFor(vector<Sprite*>& list, vector<Enemy*>& eList) {
 // 도움말 출력 메서드
 void printHelp() {
     system("cls");      // 콘솔 출력창 초기화
-    cout << "이 게임의 목표는 함정(T)이나 괴물(E)를 만나지 않고 보물(T)에 도달 하는 것이다.";
+    cout << "이 게임의 목표는 함정(T)이나 괴물(E)를 만나지 않고 보물(T)에 도달 하는 것이다." << endl;
     cout << "함정과 보물은 같은 문자 (T)로 표현 되므로 50%의 확률로 신중하게 선택을 해야한다." << endl;
     cout << "괴물은 주인공이 3번을 움직이면 1번 주인공을 향해 움직인다.\n" << endl;
     cout << "주인공은 a, s, d, w키를 이용하여 움직일 수 있다.\n" << endl;
