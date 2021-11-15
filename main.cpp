@@ -74,7 +74,7 @@ void printIntro() {
 
 int main() {
     vector<Sprite*> list;   // 전체 스프라이트 리스트 저장용 포인터 저장 벡터
-    vector<Enemy*> eList;
+    vector<Enemy*> eList;   // 괴물 객체 리스트 저장용 포인터 저장 벡터
     int value;              // 게임 보드 초기화 용 입력 버퍼 변수
     random_device rd;       // 난수 생성을 위한 random_device 객체
     mt19937 gen(rd());      // 32비트 난수 생성 엔진 초기화
@@ -87,10 +87,8 @@ int main() {
         cin >> value;
     } while (value > 21 || value < 9);
 
-    uniform_int_distribution<int> distr(0, value - 1);              // 난수 생성 분포 설정
-    int enemyNum = (value * 21) / 81;
-
-    Board board(value);                                             // 새로운 게임 보드 생성
+    Board board(value);                                // 새로운 게임 보드 생성
+    uniform_int_distribution<int> distr(0, value - 1); // 난수 생성 분포 설정
     do {
         deleteFor(list, eList);
         list.push_back(new Hero(distr(gen), distr(gen), value));            // 영웅 객체 랜덤 위치 생성
