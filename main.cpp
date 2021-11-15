@@ -67,7 +67,6 @@ int main() {
     int enemyNum = (value * 21) / 81;
 
     Board board(value);                                             // 새로운 게임 보드 생성
-    // TODO: 맵 크기에 따라 Enemy 수 변경
     do {
         for (auto& e : list) { delete e; }
         for (auto& e : eList) { delete e; }

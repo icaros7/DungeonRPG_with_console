@@ -11,7 +11,7 @@
 class Hero : public Sprite {
 public:
     // 영웅 객체 생성자
-    Hero(int x, int y, int &value) : Sprite(x, y, 'H'), boardValue(value) {}
+    Hero(int x, int y, int &value) : Sprite(x, y, 'H', value) {}
 
     // 영웅 객체 출력 메서드
     void draw() { std::cout << getShape(); }

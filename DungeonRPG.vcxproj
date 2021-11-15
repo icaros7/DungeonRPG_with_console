@@ -141,7 +141,6 @@
   <ItemGroup>
     <ClCompile Include="source/Board.cpp" />
     <ClCompile Include="source/Enemy.cpp" />
-    <ClCompile Include="source/GameBox.cpp" />
     <ClCompile Include="source/Hero.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="source/Sprite.cpp" />
@@ -149,7 +148,6 @@
   <ItemGroup>
     <ClInclude Include="include/Board.h" />
     <ClInclude Include="include/Enemy.h" />
-    <ClInclude Include="include/GameBox.h" />
     <ClInclude Include="include/Hero.h" />
     <ClInclude Include="include/Sprite.h" />
     <ClInclude Include="include/Trap.h" />
