@@ -44,12 +44,43 @@ void printResult(int resultCode) {
     system("pause");
 }
 
+// 동적 메모리 할당 해제 메서드
+void deleteFor(vector<Sprite*>& list, vector<Enemy*>& eList) {
+    for (auto& e : list) { delete e; }
+    for (auto& e : eList) { delete e; }
+    list.clear();
+    eList.clear();
+}
+
+// 도움말 출력 메서드
+void printHelp() {
+    system("cls");      // 콘솔 출력창 초기화
+    cout << "이 게임의 목표는 함정(T)이나 괴물(E)를 만나지 않고 보물(T)에 도달 하는 것이다.";
+    cout << "함정과 보물은 같은 문자 (T)로 표현 되므로 50%의 확률로 신중하게 선택을 해야한다." << endl;
+    cout << "괴물은 주인공이 3번을 움직이면 1번 주인공을 향해 움직인다.\n" << endl;
+    cout << "주인공은 a, s, d, w키를 이용하여 움직일 수 있다.\n" << endl;
+    system("pause");    // press key to continue
+}
+
+// 인트로 출력 메서드
+void printIntro() {
+    cout << "┌───────────────────────────────────────┐" << endl;
+    cout << "│\t던전RPG 게임\t\t\t│" << endl;
+    cout << "│\t\t\t\t\t│" << endl;
+    cout << "│\t조원: 강지수, 이호민, 정수빈\t│" << endl;
+    cout << "└───────────────────────────────────────┘" << endl;
+    system("pause");
+}
+
 int main() {
     vector<Sprite*> list;   // 전체 스프라이트 리스트 저장용 포인터 저장 벡터
     vector<Enemy*> eList;
     int value;              // 게임 보드 초기화 용 입력 버퍼 변수
     random_device rd;       // 난수 생성을 위한 random_device 객체
     mt19937 gen(rd());      // 32비트 난수 생성 엔진 초기화
+
+    printIntro();
+    printHelp();
 
     do {
         cout << "보드 크기를 입력 하시오 (최소 9, 최대 21): ";
@@ -61,21 +92,12 @@ int main() {
 
     Board board(value);                                             // 새로운 게임 보드 생성
     do {
-        for (auto& e : list) { delete e; }
-        for (auto& e : eList) { delete e; }
-        list.clear();
-        list.push_back(new Hero(distr(gen), distr(gen), value));    // 영웅 객체 랜덤 위치 생성
-        list.push_back(new Treasure(distr(gen), distr(gen), value));       // 보물 객체 랜덤 위치 생성
-        list.push_back(new Trap(distr(gen), distr(gen), value));           // 함정 객체 랜덤 위치 생성
-        for (int i = 0; i < enemyNum; i++) { eList.push_back(new Enemy(distr(gen), distr(gen), value));}
-    } while (list[0]->checkCollision(list[1], list[2], eList[0]));   // 각자의 위치가 겹치지 않을 때 탈출
-
-    system("cls");      // 콘솔 출력창 초기화
-    cout << "이 게임의 목표는 함정(T)이나 괴물(E)를 만나지 않고 보물(T)에 도달 하는 것이다.";
-    cout << "함정과 보물은 같은 문자 (T)로 표현 되므로 50%의 확률로 신중하게 선택을 해야한다." << endl;
-    cout << "괴물은 주인공이 3번을 움직이면 1번 주인공을 향해 움직인다.\n" << endl;
-    cout << "주인공은 a, s, d, w키를 이용하여 움직일 수 있다.\n" << endl;
-    system("pause");    // press key to continue
+        deleteFor(list, eList);
+        list.push_back(new Hero(distr(gen), distr(gen), value));            // 영웅 객체 랜덤 위치 생성
+        list.push_back(new Treasure(distr(gen), distr(gen), value));        // 보물 객체 랜덤 위치 생성
+        list.push_back(new Trap(distr(gen), distr(gen), value));            // 함정 객체 랜덤 위치 생성
+        for (int i = 0; i < ((value * 21) / 81); i++) { eList.push_back(new Enemy(distr(gen), distr(gen), value));}
+    } while (list[0]->checkCollision(list[1], list[2], eList[0]));          // 각자의 위치가 겹치지 않을 때 탈출
 
     while (true) {
         system("cls");  // 콘솔 출력창 초기화
