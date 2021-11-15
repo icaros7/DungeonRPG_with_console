@@ -76,6 +76,7 @@ int main() {
     vector<Sprite*> list;   // 전체 스프라이트 리스트 저장용 포인터 저장 벡터
     vector<Enemy*> eList;   // 괴물 객체 리스트 저장용 포인터 저장 벡터
     int value;              // 게임 보드 초기화 용 입력 버퍼 변수
+    char direction;         // 키 입력 용 입력 버퍼 변수
     random_device rd;       // 난수 생성을 위한 random_device 객체
     mt19937 gen(rd());      // 32비트 난수 생성 엔진 초기화
 
@@ -105,7 +106,6 @@ int main() {
         for (auto& e : eList) { board.setValue(e->getY(), e->getX(), e->getShape()); }
         board.printBoard();
 
-        char direction;
         cout << "\n조작키: w 위로, s 아래로, a 왼쪽으로, d 오른쪽으로, c 종료";
         while(true) {
             direction = getCommand();
@@ -119,24 +119,13 @@ int main() {
         for (auto& e : eList) { e->move(list[0]->getX(), list[0]->getY()); }
 
         // TODO: break가 아닌 다음 스테이 진행시 활용하기
-        if (list[0]->checkCollision(list[1])) {
-            printResult(0);
-            break;
-        }
-        if (list[0]->checkCollision(list[2])) {
-            printResult(1);
-            break;
-        }
+        if (list[0]->checkCollision(list[1])) { printResult(0); break; }
+        if (list[0]->checkCollision(list[2])) { printResult(1); break; }
         for (auto& i : eList) {
-            if (list[0]->checkCollision(i)) {
-                printResult(1);
-                break;
-            }
+            if (list[0]->checkCollision(i)) { printResult(1); break; }
         }
     };
 
-    for (auto& e : list) { delete e; }
-    for (auto& e : eList) { delete e; }
-    list.clear();
+    deleteFor(list, eList);
     return 0;
 }
