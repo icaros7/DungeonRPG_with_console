@@ -5,5 +5,24 @@
  */
 #include "../include/Enemy.h"
 
-void Enemy::move(char d) {
-} // TODO: 랜덤 이벤트 발생
+void Enemy::move(int hero_x, int hero_y) {
+	if (moveCounter++ % 3 != 0) { return; }
+	int result_w = abs(x - hero_x);
+	int result_h = abs(y - hero_y);
+	if (result_w > result_h) {
+		if (x < hero_x) {
+			if (able(x + 1, y, boardValue)) { x += 1; }
+		}
+		else {
+			if (able(x - 1, y, boardValue)) { x -= 1; }
+		}
+	}
+	else {
+		if (y < hero_y) {
+			if (able(x, y + 1, boardValue)) { y += 1; }
+		}
+		else {
+			if (able(x, y - 1, boardValue)) { y -= 1; }
+		}
+	}
+}

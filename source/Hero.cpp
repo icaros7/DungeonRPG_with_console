@@ -27,15 +27,11 @@ void Hero::move(char d) {
 }
 
 /// <summary>
-/// 이동 가능 구역 확인 메서드
+/// 괴물 객체 충돌 유무 검사 메서드
 /// </summary>
-/// <param name="x">int 형 x 좌표</param>
-/// <param name="y">int 형 y 좌표</param>
-/// <param name="value">int 형 맵 크기</param>
-/// <returns></returns>
-bool Hero::able(int x, int y, int &value) {
-    if (x < 0 || x >= value || y < 0 || y >= value) {
-        return false;
-    }
-    return true;
+/// <param name="other">괴물 객체</param>
+/// <returns>충돌 유무 반환</returns>
+bool Hero::checkCollision(Enemy* other) {
+    if (x == other->getX() && y == other->getY()) { return true; }
+    return false;
 }

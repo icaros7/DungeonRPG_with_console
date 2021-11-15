@@ -8,11 +8,16 @@
 #include "Sprite.h"
 
 class Enemy : public Sprite {
+    int moveCounter = 0; // 영웅 이동 회수 기록 변수
+
 public:
     // 괴물 객체 생성자
-    Enemy(int x, int y) : Sprite(x, y, 'E') {}
+    Enemy(int x, int y, int& value) : Sprite(x, y, 'E', value) {}
+
+    // Sprite 가상 메서드
+    void move(char d) {}
 
     // 괴물 객체 동적 이동 메서드
-    void move(char d);
+    void move(int hero_x, int hero_y);
 };
 

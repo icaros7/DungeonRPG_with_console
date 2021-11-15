@@ -9,7 +9,7 @@
 class Treasure : public Sprite {
 public:
     // 보물 객체 생성자
-    Treasure(int x, int y) : Sprite(x, y, 'T') { }
+    Treasure(int x, int y, int& value) : Sprite(x, y, 'T', value) { }
 
     // 보물 객체 동적 이동 메서드
     void move(char d) {}

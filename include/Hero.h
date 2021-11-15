@@ -6,10 +6,9 @@
 #pragma once
 #include <iostream>
 #include "Sprite.h"
+#include "Enemy.h"
 
 class Hero : public Sprite {
-    int boardValue; // able 메서드 구현을 위한 맵 크기 할당
-
 public:
     // 영웅 객체 생성자
     Hero(int x, int y, int &value) : Sprite(x, y, 'H'), boardValue(value) {}
@@ -20,7 +19,7 @@ public:
     // 영웅 객체 정적 이동 메서드
     void move(char d);
 
-    // 맵 이동 가능 구역 확인 메서드
-    bool able(int x, int y, int &value);
+    // 괴물 객체 충돌 유무 검사 메서드
+    bool checkCollision(Enemy* other);
 };
 
