@@ -11,7 +11,6 @@
 
 #include "include/Sprite.h"
 #include "include/Hero.h"
-#include "include/Enemy.h"
 #include "include/Treasure.h"
 #include "include/Trap.h"
 #include "include/Board.h"
