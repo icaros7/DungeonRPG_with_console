@@ -1,14 +1,14 @@
 /*
- * ë˜ì „ ê²Œìž„
- * ìž‘ì„±: 1íŒ€ ê°•ì§€ìˆ˜, ì´í˜¸ë¯¼, ì •ìˆ˜ë¹ˆ
- * íŒŒì¼: Hero.cpp
+ * ´øÀü °ÔÀÓ
+ * ÀÛ¼º: 1ÆÀ °­Áö¼ö, ÀÌÈ£¹Î, Á¤¼öºó
+ * ÆÄÀÏ: Hero.cpp
  */
 #include "../include/Hero.h"
 
 /// <summary>
-/// ì˜ì›… ê°ì²´ ì •ì  ì´ë™ ë©”ì„œë“œ
+/// ¿µ¿õ °´Ã¼ Á¤Àû ÀÌµ¿ ¸Þ¼­µå
 /// </summary>
-/// <param name="d">ì‚¬ìš©ìž í‚¤ ìž…ë ¥</param>
+/// <param name="d">»ç¿ëÀÚ Å° ÀÔ·Â</param>
 void Hero::move(char d) {
     switch (d) {
     case 'a':
@@ -27,10 +27,10 @@ void Hero::move(char d) {
 }
 
 /// <summary>
-/// ê´´ë¬¼ ê°ì²´ ì¶©ëŒ ìœ ë¬´ ê²€ì‚¬ ë©”ì„œë“œ
+/// ±«¹° °´Ã¼ Ãæµ¹ À¯¹« °Ë»ç ¸Þ¼­µå
 /// </summary>
-/// <param name="other">ê´´ë¬¼ ê°ì²´</param>
-/// <returns>ì¶©ëŒ ìœ ë¬´ ë°˜í™˜</returns>
+/// <param name="other">±«¹° °´Ã¼</param>
+/// <returns>Ãæµ¹ À¯¹« ¹ÝÈ¯</returns>
 bool Hero::checkCollision(Enemy* other) {
     if (x == other->getX() && y == other->getY()) { return true; }
     return false;

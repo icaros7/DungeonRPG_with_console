@@ -1,7 +1,7 @@
 /*
- * ë˜ì „ ê²Œì„
- * ì‘ì„±: 1íŒ€ ê°•ì§€ìˆ˜, ì´í˜¸ë¯¼, ì •ìˆ˜ë¹ˆ
- * íŒŒì¼: Trap.h
+ * ´øÀü °ÔÀÓ
+ * ÀÛ¼º: 1ÆÀ °­Áö¼ö, ÀÌÈ£¹Î, Á¤¼öºó
+ * ÆÄÀÏ: Trap.h
  */
 #ifndef DUNGEON_TRAP_H
 #define DUNGEON_TRAP_H
@@ -10,10 +10,10 @@
 
 class Trap : public Sprite {
 public:
-    // ë³´ë¬¼ ê°ì²´ ìƒì„±ì
+    // º¸¹° °´Ã¼ »ı¼ºÀÚ
     Trap(int x, int y, int &value) : Sprite(x, y, 'T', value) { }
 
-    // ë³´ë¬¼ ê°ì²´ ì´ë™ ë©”ì„œë“œ
+    // º¸¹° °´Ã¼ ÀÌµ¿ ¸Ş¼­µå
     void move(char d) {}
 };
 

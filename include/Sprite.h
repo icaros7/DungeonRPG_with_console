@@ -1,25 +1,25 @@
 /*
- * ë˜ì „ ê²Œì„
- * ì‘ì„±: 1íŒ€ ê°•ì§€ìˆ˜, ì´í˜¸ë¯¼, ì •ìˆ˜ë¹ˆ
- * íŒŒì¼: Sprite.h
+ * ´øÀü °ÔÀÓ
+ * ÀÛ¼º: 1ÆÀ °­Áö¼ö, ÀÌÈ£¹Î, Á¤¼öºó
+ * ÆÄÀÏ: Sprite.h
  */
 #ifndef DUNGEON_SPRITE_H
 #define DUNGEON_SPRITE_H
 
 class Sprite {
 protected:
-    int x, y;       // í˜„ì¬ ìœ„ì¹˜
-    char shape;     // ë‚˜íƒ€ë‚¼ ë¬¸ì
-    int boardValue; // ë³´ë“œ í¬ê¸° ì €ì¥
+    int x, y;       // ÇöÀç À§Ä¡
+    char shape;     // ³ªÅ¸³¾ ¹®ÀÚ
+    int boardValue; // º¸µå Å©±â ÀúÀå
 
 public:
-    // ìƒì„±ì
+    // »ı¼ºÀÚ
     Sprite(int x, int y, char shape, int &value) : x(x), y(y), shape(shape), boardValue(value) {}
 
-    // ì†Œë©¸ì
+    // ¼Ò¸êÀÚ
     virtual ~Sprite() {}
 
-    // Virtual í˜•íƒœì˜ move ë©”ì„œë“œ
+    // Virtual ÇüÅÂÀÇ move ¸Ş¼­µå
     virtual void move(char d) = 0;
 
     // getter
@@ -27,11 +27,11 @@ public:
     int getX() { return x; }
     int getY() { return y; }
 
-    // ìŠ¤í”„ë¼ì´íŠ¸ ë¼ë¦¬ì˜ ì¶©ëŒ ìœ ë¬´ ê²€ì‚¬ ë©”ì„œë“œ
+    // ½ºÇÁ¶óÀÌÆ® ³¢¸®ÀÇ Ãæµ¹ À¯¹« °Ë»ç ¸Ş¼­µå
     bool checkCollision(Sprite* other);
     bool checkCollision(Sprite* other1, Sprite* other2, Sprite* other);
 
-    // ë§µ ì´ë™ ê°€ëŠ¥ êµ¬ì—­ í™•ì¸ ë©”ì„œë“œ
+    // ¸Ê ÀÌµ¿ °¡´É ±¸¿ª È®ÀÎ ¸Ş¼­µå
     bool able(int x, int y, int& value);
 };
 

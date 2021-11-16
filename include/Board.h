@@ -1,7 +1,7 @@
 /*
- * ë˜ì „ ê²Œì„
- * ì‘ì„±: 1íŒ€ ê°•ì§€ìˆ˜, ì´í˜¸ë¯¼, ì •ìˆ˜ë¹ˆ
- * íŒŒì¼: Board.h
+ * ´øÀü °ÔÀÓ
+ * ÀÛ¼º: 1ÆÀ °­Áö¼ö, ÀÌÈ£¹Î, Á¤¼öºó
+ * ÆÄÀÏ: Board.h
  */
 #ifndef DUNGEON_BOARD_H
 #define DUNGEON_BOARD_H
@@ -9,23 +9,23 @@
 #include <iostream>
 
 class Board {
-	char* board;        // ê²Œì„ ë³´ë“œë¥¼ ë‚˜íƒ€ë‚¼ í¬ì¸í„°
-	int width, height;  // ê²Œì„ ë³´ë“œì˜ ë„“ì´, ë†’ì´
+	char* board;        // °ÔÀÓ º¸µå¸¦ ³ªÅ¸³¾ Æ÷ÀÎÅÍ
+	int width, height;  // °ÔÀÓ º¸µåÀÇ ³ĞÀÌ, ³ôÀÌ
 
 public:
-    // ê²Œì„ ë³´ë“œ ìƒì„±ì
+    // °ÔÀÓ º¸µå »ı¼ºÀÚ
     Board(int value);
 
-    // ê²Œì„ ë³´ë“œ ì†Œë©¸ì
+    // °ÔÀÓ º¸µå ¼Ò¸êÀÚ
     ~Board() { delete board; }
 
     // 
     void setValue(int r, int c, char shape) { board[r * width + c] = shape; }
 
-    // ë³´ë“œ ì¶œë ¥ ë©”ì„œë“œ
+    // º¸µå Ãâ·Â ¸Ş¼­µå
     void printBoard();
 
-    // ë³´ë“œ ì´ˆê¸°í™” ë©”ì„œë“œ
+    // º¸µå ÃÊ±âÈ­ ¸Ş¼­µå
     void clearBoard();
 };
 

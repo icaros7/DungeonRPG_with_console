@@ -1,7 +1,7 @@
 /*
- * ë˜ì „ ê²Œì„
- * ì‘ì„±: 1íŒ€ ê°•ì§€ìˆ˜, ì´í˜¸ë¯¼, ì •ìˆ˜ë¹ˆ
- * íŒŒì¼: Enemy.h
+ * ´øÀü °ÔÀÓ
+ * ÀÛ¼º: 1ÆÀ °­Áö¼ö, ÀÌÈ£¹Î, Á¤¼öºó
+ * ÆÄÀÏ: Enemy.h
  */
 #ifndef DUNGEON_ENEMY_H
 #define DUNGEON_ENEMY_H
@@ -10,16 +10,16 @@
 #include "Sprite.h"
 
 class Enemy : public Sprite {
-    int moveCounter = 0; // ì˜ì›… ì´ë™ íšŒìˆ˜ ê¸°ë¡ ë³€ìˆ˜
+    int moveCounter = 0; // ¿µ¿õ ÀÌµ¿ È¸¼ö ±â·Ï º¯¼ö
 
 public:
-    // ê´´ë¬¼ ê°ì²´ ìƒì„±ì
+    // ±«¹° °´Ã¼ »ı¼ºÀÚ
     Enemy(int x, int y, int& value) : Sprite(x, y, 'E', value) {}
 
-    // Sprite ê°€ìƒ ë©”ì„œë“œ
+    // Sprite °¡»ó ¸Ş¼­µå
     void move(char d) {}
 
-    // ê´´ë¬¼ ê°ì²´ ë™ì  ì´ë™ ë©”ì„œë“œ
+    // ±«¹° °´Ã¼ µ¿Àû ÀÌµ¿ ¸Ş¼­µå
     void move(int hero_x, int hero_y);
 };
 

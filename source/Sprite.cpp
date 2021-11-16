@@ -1,25 +1,25 @@
 /*
- * ë˜ì „ ê²Œì„
- * ì‘ì„±: 1íŒ€ ê°•ì§€ìˆ˜, ì´í˜¸ë¯¼, ì •ìˆ˜ë¹ˆ
- * íŒŒì¼: Sprite.cpp
+ * ´øÀü °ÔÀÓ
+ * ÀÛ¼º: 1ÆÀ °­Áö¼ö, ÀÌÈ£¹Î, Á¤¼öºó
+ * ÆÄÀÏ: Sprite.cpp
  */
 #include "../include/Sprite.h"
 
 /// <summary>
-/// ìŠ¤í”„ë¼ì´íŠ¸ ë¼ë¦¬ì˜ ì¶©ëŒ ìœ ë¬´ ê²€ì‚¬ ë©”ì„œë“œ
+/// ½ºÇÁ¶óÀÌÆ® ³¢¸®ÀÇ Ãæµ¹ À¯¹« °Ë»ç ¸Ş¼­µå
 /// </summary>
-/// <param name="other">Sprite íƒ€ì… í”¼ê²€ì‚¬ì</param>
-/// <returns>ì¶©ëŒ ìœ ë¬´ bool íƒ€ì… ë°˜í™˜</returns>
+/// <param name="other">Sprite Å¸ÀÔ ÇÇ°Ë»çÀÚ</param>
+/// <returns>Ãæµ¹ À¯¹« bool Å¸ÀÔ ¹İÈ¯</returns>
 bool Sprite::checkCollision(Sprite* other) {
     if (x == other->getX() && y == other->getY()) { return true; }
     else { return false; }
 }
 
 /// <summary>
-/// ìŠ¤í”„ë¼ì´íŠ¸ ë¼ë¦¬ì˜ ì¶©ëŒ ìœ ë¬´ ê²€ì‚¬ ë©”ì„œë“œ
+/// ½ºÇÁ¶óÀÌÆ® ³¢¸®ÀÇ Ãæµ¹ À¯¹« °Ë»ç ¸Ş¼­µå
 /// </summary>
-/// <param name="other1">Sprite íƒ€ì… í”¼ê²€ì‚¬ì1</param>
-/// <param name="other2">Sprite íƒ€ì… í”¼ê²€ì‚¬ì2</param>
+/// <param name="other1">Sprite Å¸ÀÔ ÇÇ°Ë»çÀÚ1</param>
+/// <param name="other2">Sprite Å¸ÀÔ ÇÇ°Ë»çÀÚ2</param>
 /// <returns></returns>
 bool Sprite::checkCollision(Sprite* other1, Sprite* other2, Sprite* other3) {
     if (checkCollision(other1) || checkCollision(other2) || checkCollision(other3)) return true;
@@ -28,11 +28,11 @@ bool Sprite::checkCollision(Sprite* other1, Sprite* other2, Sprite* other3) {
 }
 
 /// <summary>
-/// ì´ë™ ê°€ëŠ¥ êµ¬ì—­ í™•ì¸ ë©”ì„œë“œ
+/// ÀÌµ¿ °¡´É ±¸¿ª È®ÀÎ ¸Ş¼­µå
 /// </summary>
-/// <param name="x">int í˜• x ì¢Œí‘œ</param>
-/// <param name="y">int í˜• y ì¢Œí‘œ</param>
-/// <param name="value">int í˜• ë§µ í¬ê¸°</param>
+/// <param name="x">int Çü x ÁÂÇ¥</param>
+/// <param name="y">int Çü y ÁÂÇ¥</param>
+/// <param name="value">int Çü ¸Ê Å©±â</param>
 /// <returns></returns>
 bool Sprite::able(int x, int y, int& value) {
     if (x < 0 || x >= value || y < 0 || y >= value) {

@@ -1,22 +1,22 @@
 /*
- * ë˜ì „ ê²Œì„
- * ì‘ì„±: 1íŒ€ ê°•ì§€ìˆ˜, ì´í˜¸ë¯¼, ì •ìˆ˜ë¹ˆ
- * íŒŒì¼: Board.cpp
+ * ´øÀü °ÔÀÓ
+ * ÀÛ¼º: 1ÆÀ °­Áö¼ö, ÀÌÈ£¹Î, Á¤¼öºó
+ * ÆÄÀÏ: Board.cpp
  */
 #include "../include/Board.h"
 
 /// <summary>
-/// ë³´ë“œ ê°ì²´ ìƒì„±ì
+/// º¸µå °´Ã¼ »ı¼ºÀÚ
 /// </summary>
-/// <param name="w">int í˜• ë³´ë“œ ê°€ë¡œ í¬ê¸°</param>
-/// <param name="h">int í˜• ë³´ë“œ ì„¸ë¡œ í¬ê¸°</param>
+/// <param name="w">int Çü º¸µå °¡·Î Å©±â</param>
+/// <param name="h">int Çü º¸µå ¼¼·Î Å©±â</param>
 Board::Board(int value) : width(value), height(value) {
-    board = new char[width * height];   // ìƒˆ ë³´ë“œ ìƒì„±
-    clearBoard();                       // ë³´ë“œ ì´ˆê¸°í™”
+    board = new char[width * height];   // »õ º¸µå »ı¼º
+    clearBoard();                       // º¸µå ÃÊ±âÈ­
 }
 
 /// <summary>
-/// ë³´ë“œ ì¶œë ¥ ë©”ì„œë“œ
+/// º¸µå Ãâ·Â ¸Ş¼­µå
 /// </summary>
 void Board::printBoard() {
     for (int i = 0; i < height; i++) {
@@ -27,7 +27,7 @@ void Board::printBoard() {
 }
 
 /// <summary>
-/// ë³´ë“œ ì§€ìš°ê¸° ë©”ì„œë“œ
+/// º¸µå Áö¿ì±â ¸Ş¼­µå
 /// </summary>
 void Board::clearBoard() {
     for (int i = 0; i < height; i++) {

@@ -1,7 +1,7 @@
 /*
- * ë˜ì „ ê²Œì„
- * ì‘ì„±: 1íŒ€ ê°•ì§€ìˆ˜, ì´í˜¸ë¯¼, ì •ìˆ˜ë¹ˆ
- * íŒŒì¼: Hero.h
+ * ´øÀü °ÔÀÓ
+ * ÀÛ¼º: 1ÆÀ °­Áö¼ö, ÀÌÈ£¹Î, Á¤¼öºó
+ * ÆÄÀÏ: Hero.h
  */
 #ifndef DUNGEON_HERO_H
 #define DUNGEON_HERO_H
@@ -12,16 +12,16 @@
 
 class Hero : public Sprite {
 public:
-    // ì˜ì›… ê°ì²´ ìƒì„±ì
+    // ¿µ¿õ °´Ã¼ »ı¼ºÀÚ
     Hero(int x, int y, int &value) : Sprite(x, y, 'H', value) {}
 
-    // ì˜ì›… ê°ì²´ ì¶œë ¥ ë©”ì„œë“œ
+    // ¿µ¿õ °´Ã¼ Ãâ·Â ¸Ş¼­µå
     void draw() { std::cout << getShape(); }
     
-    // ì˜ì›… ê°ì²´ ì •ì  ì´ë™ ë©”ì„œë“œ
+    // ¿µ¿õ °´Ã¼ Á¤Àû ÀÌµ¿ ¸Ş¼­µå
     void move(char d);
 
-    // ê´´ë¬¼ ê°ì²´ ì¶©ëŒ ìœ ë¬´ ê²€ì‚¬ ë©”ì„œë“œ
+    // ±«¹° °´Ã¼ Ãæµ¹ À¯¹« °Ë»ç ¸Ş¼­µå
     bool checkCollision(Enemy* other);
 };
 

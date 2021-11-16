@@ -1,7 +1,7 @@
 /*
- * ë˜ì „ ê²Œì„
- * ì‘ì„±: 1íŒ€ ê°•ì§€ìˆ˜, ì´í˜¸ë¯¼, ì •ìˆ˜ë¹ˆ
- * íŒŒì¼: main.cpp
+ * ´øÀü °ÔÀÓ
+ * ÀÛ¼º: 1ÆÀ °­Áö¼ö, ÀÌÈ£¹Î, Á¤¼öºó
+ * ÆÄÀÏ: main.cpp
  */
 #include <iostream>
 #include <vector>
@@ -17,13 +17,13 @@
 
 using namespace std;
 
-// ë‘˜ ì¤‘ ë” ì‘ì€ ìˆ˜ ë°˜í™˜ ë©”ì„œë“œ
+// µÑ Áß ´õ ÀÛÀº ¼ö ¹İÈ¯ ¸Ş¼­µå
 int smallNum(int x, int y) {
     if (x >= y) return y;
     else return x;
 }
 
-// ì‹¤ì‹œê°„ í‚¤ ì…ë ¥ì„ ìœ„í•œ conio.h/_kbhit ë©”ì„œë“œ ì‚¬ìš©
+// ½Ç½Ã°£ Å° ÀÔ·ÂÀ» À§ÇÑ conio.h/_kbhit ¸Ş¼­µå »ç¿ë
 int getCommand() {
     if (_kbhit()) {
         return _getch();
@@ -32,9 +32,9 @@ int getCommand() {
     return -1;
 }
 
-// ê²°ê³¼ ì¶œë ¥ ë©”ì„œë“œ
+// °á°ú Ãâ·Â ¸Ş¼­µå
 void printResult(int resultCode) {
-    string result = resultCode == 0 ? "ì„±ê³µí•˜ì…¨ìŠµë‹ˆë‹¤!" : "ì‹¤íŒ¨í•˜ì…¨ìŠµë‹ˆë‹¤...";
+    string result = resultCode == 0 ? "¼º°øÇÏ¼Ì½À´Ï´Ù!" : "½ÇÆĞÇÏ¼Ì½À´Ï´Ù...";
 
     system("cls");
     cout << "-----------------" << endl;
@@ -43,7 +43,7 @@ void printResult(int resultCode) {
     system("pause");
 }
 
-// ë™ì  ë©”ëª¨ë¦¬ í• ë‹¹ í•´ì œ ë©”ì„œë“œ
+// µ¿Àû ¸Ş¸ğ¸® ÇÒ´ç ÇØÁ¦ ¸Ş¼­µå
 void deleteFor(vector<Sprite*>& list, vector<Enemy*>& eList) {
     for (auto& e : list) { delete e; }
     for (auto& e : eList) { delete e; }
@@ -51,61 +51,61 @@ void deleteFor(vector<Sprite*>& list, vector<Enemy*>& eList) {
     eList.clear();
 }
 
-// ë„ì›€ë§ ì¶œë ¥ ë©”ì„œë“œ
+// µµ¿ò¸» Ãâ·Â ¸Ş¼­µå
 void printHelp() {
-    system("cls");      // ì½˜ì†” ì¶œë ¥ì°½ ì´ˆê¸°í™”
-    cout << "ì´ ê²Œì„ì˜ ëª©í‘œëŠ” í•¨ì •(T)ì´ë‚˜ ê´´ë¬¼(E)ë¥¼ ë§Œë‚˜ì§€ ì•Šê³  ë³´ë¬¼(T)ì— ë„ë‹¬ í•˜ëŠ” ê²ƒì´ë‹¤." << endl;
-    cout << "í•¨ì •ê³¼ ë³´ë¬¼ì€ ê°™ì€ ë¬¸ì (T)ë¡œ í‘œí˜„ ë˜ë¯€ë¡œ 50%ì˜ í™•ë¥ ë¡œ ì‹ ì¤‘í•˜ê²Œ ì„ íƒì„ í•´ì•¼í•œë‹¤." << endl;
-    cout << "ê´´ë¬¼ì€ ì£¼ì¸ê³µì´ 3ë²ˆì„ ì›€ì§ì´ë©´ 1ë²ˆ ì£¼ì¸ê³µì„ í–¥í•´ ì›€ì§ì¸ë‹¤.\n" << endl;
-    cout << "ì£¼ì¸ê³µì€ a, s, d, wí‚¤ë¥¼ ì´ìš©í•˜ì—¬ ì›€ì§ì¼ ìˆ˜ ìˆë‹¤.\n" << endl;
+    system("cls");      // ÄÜ¼Ö Ãâ·ÂÃ¢ ÃÊ±âÈ­
+    cout << "ÀÌ °ÔÀÓÀÇ ¸ñÇ¥´Â ÇÔÁ¤(T)ÀÌ³ª ±«¹°(E)¸¦ ¸¸³ªÁö ¾Ê°í º¸¹°(T)¿¡ µµ´Ş ÇÏ´Â °ÍÀÌ´Ù." << endl;
+    cout << "ÇÔÁ¤°ú º¸¹°Àº °°Àº ¹®ÀÚ (T)·Î Ç¥Çö µÇ¹Ç·Î 50%ÀÇ È®·ü·Î ½ÅÁßÇÏ°Ô ¼±ÅÃÀ» ÇØ¾ßÇÑ´Ù." << endl;
+    cout << "±«¹°Àº ÁÖÀÎ°øÀÌ 3¹øÀ» ¿òÁ÷ÀÌ¸é 1¹ø ÁÖÀÎ°øÀ» ÇâÇØ ¿òÁ÷ÀÎ´Ù.\n" << endl;
+    cout << "ÁÖÀÎ°øÀº a, s, d, wÅ°¸¦ ÀÌ¿ëÇÏ¿© ¿òÁ÷ÀÏ ¼ö ÀÖ´Ù.\n" << endl;
     system("pause");    // press key to continue
 }
 
-// ì¸íŠ¸ë¡œ ì¶œë ¥ ë©”ì„œë“œ
+// ÀÎÆ®·Î Ãâ·Â ¸Ş¼­µå
 void printIntro() {
-    cout << "â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”" << endl;
-    cout << "â”‚\të˜ì „RPG ê²Œì„\t\t\tâ”‚" << endl;
-    cout << "â”‚\t\t\t\t\tâ”‚" << endl;
-    cout << "â”‚\tì¡°ì›: ê°•ì§€ìˆ˜, ì´í˜¸ë¯¼, ì •ìˆ˜ë¹ˆ\tâ”‚" << endl;
-    cout << "â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜" << endl;
+    cout << "¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤" << endl;
+    cout << "¦¢\t´øÀüRPG °ÔÀÓ\t\t\t¦¢" << endl;
+    cout << "¦¢\t\t\t\t\t¦¢" << endl;
+    cout << "¦¢\tÁ¶¿ø: °­Áö¼ö, ÀÌÈ£¹Î, Á¤¼öºó\t¦¢" << endl;
+    cout << "¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥" << endl;
     system("pause");
 }
 
 int main() {
-    vector<Sprite*> list;   // ì „ì²´ ìŠ¤í”„ë¼ì´íŠ¸ ë¦¬ìŠ¤íŠ¸ ì €ì¥ìš© í¬ì¸í„° ì €ì¥ ë²¡í„°
-    vector<Enemy*> eList;   // ê´´ë¬¼ ê°ì²´ ë¦¬ìŠ¤íŠ¸ ì €ì¥ìš© í¬ì¸í„° ì €ì¥ ë²¡í„°
-    int value;              // ê²Œì„ ë³´ë“œ ì´ˆê¸°í™” ìš© ì…ë ¥ ë²„í¼ ë³€ìˆ˜
-    char direction;         // í‚¤ ì…ë ¥ ìš© ì…ë ¥ ë²„í¼ ë³€ìˆ˜
-    random_device rd;       // ë‚œìˆ˜ ìƒì„±ì„ ìœ„í•œ random_device ê°ì²´
-    mt19937 gen(rd());      // 32ë¹„íŠ¸ ë‚œìˆ˜ ìƒì„± ì—”ì§„ ì´ˆê¸°í™”
+    vector<Sprite*> list;   // ÀüÃ¼ ½ºÇÁ¶óÀÌÆ® ¸®½ºÆ® ÀúÀå¿ë Æ÷ÀÎÅÍ ÀúÀå º¤ÅÍ
+    vector<Enemy*> eList;   // ±«¹° °´Ã¼ ¸®½ºÆ® ÀúÀå¿ë Æ÷ÀÎÅÍ ÀúÀå º¤ÅÍ
+    int value;              // °ÔÀÓ º¸µå ÃÊ±âÈ­ ¿ë ÀÔ·Â ¹öÆÛ º¯¼ö
+    char direction;         // Å° ÀÔ·Â ¿ë ÀÔ·Â ¹öÆÛ º¯¼ö
+    random_device rd;       // ³­¼ö »ı¼ºÀ» À§ÇÑ random_device °´Ã¼
+    mt19937 gen(rd());      // 32ºñÆ® ³­¼ö »ı¼º ¿£Áø ÃÊ±âÈ­
 
     printIntro();
     printHelp();
 
     do {
-        cout << "ë³´ë“œ í¬ê¸°ë¥¼ ì…ë ¥ í•˜ì‹œì˜¤ (ìµœì†Œ 9, ìµœëŒ€ 21): ";
+        cout << "º¸µå Å©±â¸¦ ÀÔ·Â ÇÏ½Ã¿À (ÃÖ¼Ò 9, ÃÖ´ë 21): ";
         cin >> value;
     } while (value > 21 || value < 9);
 
-    Board board(value);                                // ìƒˆë¡œìš´ ê²Œì„ ë³´ë“œ ìƒì„±
-    uniform_int_distribution<int> distr(0, value - 1); // ë‚œìˆ˜ ìƒì„± ë¶„í¬ ì„¤ì •
+    Board board(value);                                // »õ·Î¿î °ÔÀÓ º¸µå »ı¼º
+    uniform_int_distribution<int> distr(0, value - 1); // ³­¼ö »ı¼º ºĞÆ÷ ¼³Á¤
     do {
         deleteFor(list, eList);
-        list.push_back(new Hero(distr(gen), distr(gen), value));            // ì˜ì›… ê°ì²´ ëœë¤ ìœ„ì¹˜ ìƒì„±
-        list.push_back(new Treasure(distr(gen), distr(gen), value));        // ë³´ë¬¼ ê°ì²´ ëœë¤ ìœ„ì¹˜ ìƒì„±
-        list.push_back(new Trap(distr(gen), distr(gen), value));            // í•¨ì • ê°ì²´ ëœë¤ ìœ„ì¹˜ ìƒì„±
+        list.push_back(new Hero(distr(gen), distr(gen), value));            // ¿µ¿õ °´Ã¼ ·£´ı À§Ä¡ »ı¼º
+        list.push_back(new Treasure(distr(gen), distr(gen), value));        // º¸¹° °´Ã¼ ·£´ı À§Ä¡ »ı¼º
+        list.push_back(new Trap(distr(gen), distr(gen), value));            // ÇÔÁ¤ °´Ã¼ ·£´ı À§Ä¡ »ı¼º
         for (int i = 0; i < ((value * 21) / 81); i++) { eList.push_back(new Enemy(distr(gen), distr(gen), value));}
-    } while (list[0]->checkCollision(list[1], list[2], eList[0]));          // ê°ìì˜ ìœ„ì¹˜ê°€ ê²¹ì¹˜ì§€ ì•Šì„ ë•Œ íƒˆì¶œ
+    } while (list[0]->checkCollision(list[1], list[2], eList[0]));          // °¢ÀÚÀÇ À§Ä¡°¡ °ãÄ¡Áö ¾ÊÀ» ¶§ Å»Ãâ
 
     while (true) {
-        system("cls");  // ì½˜ì†” ì¶œë ¥ì°½ ì´ˆê¸°í™”
+        system("cls");  // ÄÜ¼Ö Ãâ·ÂÃ¢ ÃÊ±âÈ­
 
         board.clearBoard();
         for (auto& e : list) { board.setValue(e->getY(), e->getX(), e->getShape()); }
         for (auto& e : eList) { board.setValue(e->getY(), e->getX(), e->getShape()); }
         board.printBoard();
 
-        cout << "\nì¡°ì‘í‚¤: w ìœ„ë¡œ, s ì•„ë˜ë¡œ, a ì™¼ìª½ìœ¼ë¡œ, d ì˜¤ë¥¸ìª½ìœ¼ë¡œ, c ì¢…ë£Œ";
+        cout << "\nÁ¶ÀÛÅ°: w À§·Î, s ¾Æ·¡·Î, a ¿ŞÂÊÀ¸·Î, d ¿À¸¥ÂÊÀ¸·Î, c Á¾·á";
         while(true) {
             direction = getCommand();
 
@@ -117,7 +117,7 @@ int main() {
         for (auto& e : list) { e->move(direction); }
         for (auto& e : eList) { e->move(list[0]->getX(), list[0]->getY()); }
 
-        // TODO: breakê°€ ì•„ë‹Œ ë‹¤ìŒ ìŠ¤í…Œì´ ì§„í–‰ì‹œ í™œìš©í•˜ê¸°
+        // TODO: break°¡ ¾Æ´Ñ ´ÙÀ½ ½ºÅ×ÀÌ ÁøÇà½Ã È°¿ëÇÏ±â
         if (list[0]->checkCollision(list[1])) { printResult(0); break; }
         if (list[0]->checkCollision(list[2])) { printResult(1); break; }
         for (auto& i : eList) {
