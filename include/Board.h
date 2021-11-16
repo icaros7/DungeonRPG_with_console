@@ -3,7 +3,9 @@
  * 작성: 1팀 강지수, 이호민, 정수빈
  * 파일: Board.h
  */
-#pragma once
+#ifndef DUNGEON_BOARD_H
+#define DUNGEON_BOARD_H
+
 #include <iostream>
 
 class Board {
@@ -26,3 +28,5 @@ public:
     // 보드 초기화 메서드
     void clearBoard();
 };
+
+#endif //DUNGEON_BOARD_H

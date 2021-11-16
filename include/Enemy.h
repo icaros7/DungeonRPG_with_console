@@ -3,7 +3,9 @@
  * 작성: 1팀 강지수, 이호민, 정수빈
  * 파일: Enemy.h
  */
-#pragma once
+#ifndef DUNGEON_ENEMY_H
+#define DUNGEON_ENEMY_H
+
 #include <iostream>
 #include "Sprite.h"
 
@@ -21,3 +23,4 @@ public:
     void move(int hero_x, int hero_y);
 };
 
+#endif // DUNGEON_ENEMY_H

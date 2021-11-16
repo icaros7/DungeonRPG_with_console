@@ -3,7 +3,9 @@
  * 작성: 1팀 강지수, 이호민, 정수빈
  * 파일: Treasure.h
  */
-#pragma once
+#ifndef DUNGEON_TREASURE_H
+#define DUNGEON_TREASURE_H
+
 #include "Sprite.h"
 
 class Treasure : public Sprite {
@@ -15,3 +17,4 @@ public:
     void move(char d) {}
 };
 
+#endif // DUNGEON_TREASURE_H

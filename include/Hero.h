@@ -3,7 +3,9 @@
  * 작성: 1팀 강지수, 이호민, 정수빈
  * 파일: Hero.h
  */
-#pragma once
+#ifndef DUNGEON_HERO_H
+#define DUNGEON_HERO_H
+
 #include <iostream>
 #include "Sprite.h"
 #include "Enemy.h"
@@ -23,3 +25,4 @@ public:
     bool checkCollision(Enemy* other);
 };
 
+#endif // DUNGEON_HERO_H

@@ -3,7 +3,8 @@
  * 작성: 1팀 강지수, 이호민, 정수빈
  * 파일: Sprite.h
  */
-#pragma once
+#ifndef DUNGEON_SPRITE_H
+#define DUNGEON_SPRITE_H
 
 class Sprite {
 protected:
@@ -33,3 +34,5 @@ public:
     // 맵 이동 가능 구역 확인 메서드
     bool able(int x, int y, int& value);
 };
+
+#endif // DUNGEON_SPRITE_H
